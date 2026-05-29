@@ -207,7 +207,6 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:12px}
     </div>
   </div>
   <div class="head-actions">
-    <button class="btn ghost" id="resetBtn" title="Reset to the original Notion snapshot">↺ Reset data</button>
     <button class="btn primary" id="newProjBtn">＋ New project</button>
   </div>
 </header>
@@ -766,11 +765,6 @@ $("#clearFilters").onclick=()=>{
 
 /* ---------- Top buttons ---------- */
 $("#newProjBtn").onclick=()=>openModal(newProject(state.columns[0]||"No status"),true);
-$("#resetBtn").onclick=()=>{
-  if(confirm("Reset the board to the original Notion snapshot? Your local changes will be lost.")){
-    state=structuredClone(SEED); save(); boot();
-  }
-};
 
 /* ---------- Company manager ---------- */
 function renderCoManager(){
